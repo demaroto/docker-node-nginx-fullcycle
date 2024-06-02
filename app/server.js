@@ -4,7 +4,7 @@ const PORT = 3000
 const { connection } = require('./db/mysql')
 const PeopleRepository = require('./repositories/people');
 app.get('/', async (req, res) => { 
-    const name = "Pessoa " + Math.floor(Math.random() * (10000 - 1 + 1) + 5);
+    const name = "Wildemar " + Math.floor(Math.random() * (10000 - 1 + 1) + 5);
     const peopleRepository = new PeopleRepository(connection);
     await peopleRepository.createPeople(name);
     const people = await peopleRepository.getPeople();
