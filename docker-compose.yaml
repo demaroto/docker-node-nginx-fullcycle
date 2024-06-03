@@ -37,9 +37,12 @@ services:
       - node_network
     tty: true
     container_name: appnode
-    restart: on-failure
+    environment:
+      - NODE_ENV=development
     ports:
       - "3000:3000"
+    volumes:
+      - "./app/:/usr/src/app/"
     depends_on:
       - check-db-started
   check-db-started: 
